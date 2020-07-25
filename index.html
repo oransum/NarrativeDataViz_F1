@@ -75,10 +75,10 @@
                 margin = ({top: 20, right: 20, bottom: 20, left: 140})
                 height = (data.nodes.length - 1) * step + margin.top + margin.bottom
                 
-                graph = {                               
+                graph = [                               
                             'dummy': []
                  
-                             :nodes = data.nodes.map(({id, group}) => ({
+                             const nodes = data.nodes.map(({id, group}) => ({
                                 id,
                                 sourceLinks: [],
                                 targetLinks: [],
@@ -101,7 +101,7 @@
                               }
 
                               return {nodes, links};
-                        }
+                        ]
                                                                 
                    color = d3.scaleOrdinal(graph.nodes.map(d => d.group).sort(d3.ascending), d3.schemeCategory10)
             
