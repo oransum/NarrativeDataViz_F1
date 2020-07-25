@@ -82,7 +82,7 @@
                    y = d3.scalePoint(graph.nodes.map(d => d.id).sort(d3.ascending), [margin.top, height - margin.bottom])
             
                     chart =  {                            
-                                  svg = d3.select(DOM.svg(width, height));
+                                  const svg = d3.select(DOM.svg(width, height));
 
                                   svg.append("style").text(`
 
