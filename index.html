@@ -50,6 +50,27 @@
                   return `M${margin.left},${y1}A${r},${r} 0,0,${y1 < y2 ? 1 : 0} ${margin.left},${y2}`;
                 }
                 
+                function viewof order() {
+                  const options = [
+                    {name: "Order by Team/Driver", value: (a, b) => a.group - b.group || d3.ascending(a.id, b.id)},
+                    {name: "Order by Race Points", value: (a, b) => d3.sum(b.sourceLinks, l => l.value) + d3.sum(b.targetLinks, l => l.value) - d3.sum(a.sourceLinks, l => l.value) - d3.sum(a.targetLinks, l => l.value) || d3.ascending(a.id, b.id)},
+                    {name: "Order by Name", value: (a, b) => d3.ascending(a.id, b.id)}
+
+                  ];
+                  const form = html`<form style="display: flex; align-items: center; min-height: 33px;"><select name=i>${options.map(o => Object.assign(html`<option>`, {textContent: o.name}))}`;
+                  const timeout = setTimeout(() => {
+                    form.i.selectedIndex = 0;
+                    form.dispatchEvent(new CustomEvent("input"));
+                  }, 2000);
+                  form.onchange = () => {
+                    clearTimeout(timeout);
+                    form.value = options[form.i.selectedIndex].value;
+                    form.dispatchEvent(new CustomEvent("input")); // Safari
+                  };
+                  form.value = options[form.i.selectedIndex].value;
+                  return form;
+                }
+
                 step = 14
                 margin = ({top: 20, right: 20, bottom: 20, left: 140})
                 height = (data.nodes.length - 1) * step + margin.top + margin.bottom
