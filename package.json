@@ -1,0 +1,14 @@
+{
+  "name": "3d9394e631fe1b32",
+  "main": "3d9394e631fe1b32@323.js",
+  "version": "323.0.0",
+  "homepage": "https://observablehq.com/d/3d9394e631fe1b32",
+  "author": {
+    "name": "Oran CHAN",
+    "url": "https://observablehq.com/@wlch"
+  },
+  "type": "module",
+  "peerDependencies": {
+    "@observablehq/runtime": "4"
+  }
+}
