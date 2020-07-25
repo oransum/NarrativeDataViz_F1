@@ -76,7 +76,9 @@
                 height = (data.nodes.length - 1) * step + margin.top + margin.bottom
                 
                 graph = {                               
-                             var nodes = data.nodes.map(({id, group}) => ({
+                            var dummy = 1;
+                 
+                            const nodes = data.nodes.map(({id, group}) => ({
                                 id,
                                 sourceLinks: [],
                                 targetLinks: [],
