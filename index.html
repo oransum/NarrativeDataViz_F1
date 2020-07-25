@@ -75,9 +75,8 @@
                 margin = ({top: 20, right: 20, bottom: 20, left: 140})
                 height = (data.nodes.length - 1) * step + margin.top + margin.bottom
                 
-                function graph(data)  {      
-                           
-                        const nodes = data.nodes.map(({id, group}) => ({
+                graph = {                               
+                             nodes = data.nodes.map(({id, group}) => ({
                                 id,
                                 sourceLinks: [],
                                 targetLinks: [],
@@ -106,9 +105,8 @@
             
                    y = d3.scalePoint(graph.nodes.map(d => d.id).sort(d3.ascending), [margin.top, height - margin.bottom])
             
-                   function chart(data) {
-                            
-                            const svg = d3.select(DOM.svg(width, height));
+                    chart =  {                            
+                                  svg = d3.select(DOM.svg(width, height));
 
                                   svg.append("style").text(`
 
