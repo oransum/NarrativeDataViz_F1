@@ -41,7 +41,11 @@
             
             //d3 = import("d3-fetch")
             
-            d3.json("data/f1_dr_cons_relation_final.json").then(function(data) {
+              main.variable(observer("data")).define("data", ["FileAttachment"], function(FileAttachment){return(
+                        FileAttachment("f1_dr_cons_relation_final").json()
+                        )});
+
+            //d3.json("data/f1_dr_cons_relation_final.json").then(function(data) {
               //console.log(data); // [{"Hello": "world"}, …]
                 function arc(d) {
                   const y1 = d.source.y;
@@ -199,7 +203,7 @@
                         }
                         );                             
                            
-            });
+           // });
         </script>    
   </body>
 
