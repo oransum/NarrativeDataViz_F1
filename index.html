@@ -50,7 +50,7 @@
                   return `M${margin.left},${y1}A${r},${r} 0,0,${y1 < y2 ? 1 : 0} ${margin.left},${y2}`;
                 }
                 
-                function viewof order() {
+                function viewof_order() {
                   const options = [
                     {name: "Order by Team/Driver", value: (a, b) => a.group - b.group || d3.ascending(a.id, b.id)},
                     {name: "Order by Race Points", value: (a, b) => d3.sum(b.sourceLinks, l => l.value) + d3.sum(b.targetLinks, l => l.value) - d3.sum(a.sourceLinks, l => l.value) - d3.sum(a.targetLinks, l => l.value) || d3.ascending(a.id, b.id)},
