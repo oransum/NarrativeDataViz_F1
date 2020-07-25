@@ -75,6 +75,32 @@
                 margin = ({top: 20, right: 20, bottom: 20, left: 140})
                 height = (data.nodes.length - 1) * step + margin.top + margin.bottom
                 
+                main.variable(observer("graph")).define("graph", ["data"], function(data)
+                                {
+                                  const nodes = data.nodes.map(({id, group}) => ({
+                                    id,
+                                    sourceLinks: [],
+                                    targetLinks: [],
+                                    group
+                                  }));
+
+                                  const nodeById = new Map(nodes.map(d => [d.id, d]));
+
+                                  const links = data.links.map(({source, target, value}) => ({
+                                    source: nodeById.get(source),
+                                    target: nodeById.get(target),
+                                    value
+                                  }));
+
+                                  for (const link of links) {
+                                    const {source, target, value} = link;
+                                    source.sourceLinks.push(link);
+                                    target.targetLinks.push(link);
+                                  }
+
+                                  return {nodes, links};
+                                }
+                                                        
                
                                                                 
                    color = d3.scaleOrdinal(graph.nodes.map(d => d.group).sort(d3.ascending), d3.schemeCategory10)
@@ -188,31 +214,7 @@
                                 }
                                                                 
                                                                 
-                          graph = [                                                       
-                             "nodes" : data.nodes.map(({id, group}) => ({
-                                id,
-                                sourceLinks: [],
-                                targetLinks: [],
-                                group
-                              }));
-
-
-                              const nodeById = new Map(nodes.map(d => [d.id, d]));
-
-                              const links = data.links.map(({source, target, value}) => ({
-                                source: nodeById.get(source),
-                                target: nodeById.get(target),
-                                value
-                              }));
-
-                              for (const link of links) {
-                                const {source, target, value} = link;
-                                source.sourceLinks.push(link);
-                                target.targetLinks.push(link);
-                              }
-
-                              return {nodes, links};
-                        ]
+                           
             };
         </script>    
   </body>
