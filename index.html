@@ -41,6 +41,15 @@
             
             //d3 = import("d3-fetch")
             
+            const main = runtime.module();
+              const fileAttachments = new Map([["f1_dr_cons_relation_rename@2",new URL("./files/cdc1e7329ebb6a051dbbc82e16c51883729950a59cf4f62e29b5607a6a4677a8eafe2d9f64770791d3898ebbb31641f734bfd52bcaf26681839bda30b8e0c2ff",import.meta.url)]]);
+              main.builtin("FileAttachment", runtime.fileAttachments(name => fileAttachments.get(name)));
+              main.variable(observer()).define(["md"], function(md){return(
+            md`# Arc Diagram
+
+            This diagram places nodes in a horizontal or vertical line, with circular arcs for links. Unlike other network visualizations such as a [force layout](/@d3/force-directed-graph), the appearance (and usefulness) of an arc diagram is highly dependent on the order of nodes. Hover over a node below to inspect its connections.`
+            )});
+
               main.variable(observer("data")).define("data", ["FileAttachment"], function(FileAttachment){return(
                         FileAttachment("f1_dr_cons_relation_final").json()
                         )});
