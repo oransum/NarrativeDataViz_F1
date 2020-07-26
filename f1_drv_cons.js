@@ -1,7 +1,7 @@
 // https://observablehq.com/d/bfe9572063584e9d@68
 export default function define(runtime, observer) {
   const main = runtime.module();
-  const fileAttachments = new Map([["f1_dr_cons_relation_final",new URL("./files/cdc1e7329ebb6a051dbbc82e16c51883729950a59cf4f62e29b5607a6a4677a8eafe2d9f64770791d3898ebbb31641f734bfd52bcaf26681839bda30b8e0c2ff",import.meta.url)]]);
+  const fileAttachments = new Map([["f1_dr_cons_relation_final",new URL("./files/f1_driver_constructor_relation.json",import.meta.url)]]);
   main.builtin("FileAttachment", runtime.fileAttachments(name => fileAttachments.get(name)));
   main.variable(observer()).define(["md"], function(md){return(
 md`# F1 Success of Drivers and Constructors (2010 - 2020) & Legends`
