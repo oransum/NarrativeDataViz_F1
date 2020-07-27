@@ -1,6 +1,6 @@
-# F1 Success of Drivers and Constructors (2010 - 2020) & Legends
+# Formula One Narrative
 
-https://observablehq.com/d/bfe9572063584e9d@68
+https://observablehq.com/d/6f2a4fca4fd21aa6@672
 
 View this notebook in your browser by running a web server in this folder. For
 example:
@@ -14,14 +14,14 @@ import this module directly into your application. To npm install:
 
 ~~~sh
 npm install @observablehq/runtime@4
-npm install https://api.observablehq.com/d/bfe9572063584e9d@68.tgz?v=3
+npm install https://api.observablehq.com/d/6f2a4fca4fd21aa6.tgz?v=3
 ~~~
 
 Then, import your notebook and the runtime as:
 
 ~~~js
 import {Runtime, Inspector} from "@observablehq/runtime";
-import define from "bfe9572063584e9d";
+import define from "6f2a4fca4fd21aa6";
 ~~~
 
 To log the value of the cell named “foo”:
