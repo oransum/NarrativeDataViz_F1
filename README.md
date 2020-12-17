@@ -1,7 +1,4 @@
-## Title
-Narrative Visualizations - Formula One Racing
-
-## Introduction
+## Narrative Visualizations - Formula One Racing
 This is a story-telling visualisation about *Formula One Racing*. It gives a brief intro but quick dive-in about F1 Legends, drivers' contribution and team performance in modern era.
 
 ## Technology
@@ -13,6 +10,6 @@ It's very easy to make some words **bold** and other words *italic* with Markdow
 [Part 2](https://medium.com/analytics-vidhya/formula-1-racing-visualization-part-2-constructor-and-driver-e14c13dafad8)
 
 ### Acknowledgment
-http://ergast.com/mrd/
-https://observablehq.com/@d3/gallery
-https://en.wikipedia.org/w/index.phptitle=Formula_One&oldid=979567975
+- http://ergast.com/mrd/
+- https://observablehq.com/@d3/gallery
+- https://en.wikipedia.org/w/index.phptitle=Formula_One&oldid=979567975
